@@ -13,7 +13,7 @@ import cucumber.api.CucumberOptions;
 		glue = {"com.test.bindings"},
 		plugin = { "com.cucumber.listener.ExtentCucumberFormatter:target/cucumber-reports/report.html"},
 		monochrome=true,
-		tags={"@SampleTest"}
+		tags={"@US1_scenario1"}
 		)
 
 
