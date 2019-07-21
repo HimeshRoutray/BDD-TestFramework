@@ -29,8 +29,8 @@ public class Hooks {
 	@After
     public void afterScenario(Scenario scenario){
 		Reporter.loadXMLConfig(System.getProperty("user.dir") + new File(PropertyReader.getConfigPropertyValue("reportConfigPath")));
-		Reporter.assignAuthor("Sudipta Mohapatra");
-		Reporter.setSystemInfo("Application Name", "Kiwi Saver");
+		Reporter.assignAuthor("Himesh Routra");
+		Reporter.setSystemInfo("Application Name", "Westpac");
 	    Reporter.setSystemInfo("Machine", "Windows 10 " + "64 Bit");
 		Reporter.setSystemInfo("Browser", PropertyReader.getConfigPropertyValue("browser"));
 		if (scenario.isFailed()) {
