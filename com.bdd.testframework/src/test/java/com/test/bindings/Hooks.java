@@ -37,7 +37,7 @@ public class Hooks {
 			 String screenshotName = scenario.getName().replaceAll(" ", "_");
 			 try {
 			 File sourcePath = ((TakesScreenshot) CommonFunctions.driver).getScreenshotAs(OutputType.FILE);
-			 File destinationPath = new File(System.getProperty("user.dir") + "/target/cucumber-reports/screenshots/" + screenshotName + ".png");
+			 File destinationPath = new File(System.getProperty("user.dir") + "/target/screenshots/" + screenshotName + ".png");
 			 Files.copy(sourcePath, destinationPath);   
 			 Reporter.addScreenCaptureFromPath(destinationPath.toString());
 			 } catch (IOException e) {

@@ -11,7 +11,7 @@ import cucumber.api.CucumberOptions;
 		dryRun = false,
 		features = "classpath:featureFiles",
 		glue = {"com.test.bindings"},
-		plugin = { "com.cucumber.listener.ExtentCucumberFormatter:target/cucumber-reports/report.html"},
+		plugin = { "com.cucumber.listener.ExtentCucumberFormatter:target/cucumber-reports/report.html","rerun:target/rerun.txt"},
 		monochrome=true,
 		tags={"@US1_scenario1"}
 		)
