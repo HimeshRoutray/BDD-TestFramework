@@ -29,15 +29,15 @@ public class Hooks {
 	@After
     public void afterScenario(Scenario scenario){
 		Reporter.loadXMLConfig(System.getProperty("user.dir") + new File(PropertyReader.getConfigPropertyValue("reportConfigPath")));
-		Reporter.assignAuthor("Sudipta Mohapatra");
-		Reporter.setSystemInfo("Application Name", "Kiwi Saver");
+		Reporter.assignAuthor("Himesh Routra");
+		Reporter.setSystemInfo("Application Name", "Westpac");
 	    Reporter.setSystemInfo("Machine", "Windows 10 " + "64 Bit");
 		Reporter.setSystemInfo("Browser", PropertyReader.getConfigPropertyValue("browser"));
 		if (scenario.isFailed()) {
 			 String screenshotName = scenario.getName().replaceAll(" ", "_");
 			 try {
 			 File sourcePath = ((TakesScreenshot) CommonFunctions.driver).getScreenshotAs(OutputType.FILE);
-			 File destinationPath = new File(System.getProperty("user.dir") + "/target/cucumber-reports/screenshots/" + screenshotName + ".png");
+			 File destinationPath = new File(System.getProperty("user.dir") + "/target/screenshots/" + screenshotName + ".png");
 			 Files.copy(sourcePath, destinationPath);   
 			 Reporter.addScreenCaptureFromPath(destinationPath.toString());
 			 } catch (IOException e) {

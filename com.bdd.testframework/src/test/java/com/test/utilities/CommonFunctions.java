@@ -1,6 +1,8 @@
 package com.test.utilities;
 
 import java.util.concurrent.TimeUnit;
+import org.apache.log4j.Logger;
+import org.apache.log4j.PropertyConfigurator;
 import org.openqa.selenium.By;
 import org.openqa.selenium.InvalidSelectorException;
 import org.openqa.selenium.JavascriptExecutor;
@@ -9,11 +11,15 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.Select;
 
+
 public class CommonFunctions {
 
 	public static WebDriver driver;
+	public static Logger log;
 
 	public CommonFunctions(WebDriver driver) {
+		log = Logger.getLogger(CommonFunctions.class);
+		PropertyConfigurator.configure(System.getProperty("user.dir") + "//Log4j.properties");
 		CommonFunctions.driver = driver;
 	}
 
@@ -82,8 +88,7 @@ public class CommonFunctions {
 	 * @param message
 	 */
 	public static void insertLogMessage(String message) {
-
-		System.out.println(message);
+		log.info(message);
 	}
 
 	/**
